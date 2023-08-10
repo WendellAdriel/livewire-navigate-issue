@@ -21,19 +21,25 @@ class One extends Component
         $this->redirectRoute('two');
     }
 
-    public function redirectThree()
+    public function redirectTwoWithSession()
     {
-        $this->redirect('/three');
+        session()->regenerate();
+
+        $this->redirect('/two');
     }
 
-    public function redirectThreeNavigate()
+    public function redirectTwoNavigateWithSession()
     {
-        $this->redirect('/three', true);
+        session()->regenerate();
+
+        $this->redirect('/two', true);
     }
 
-    public function redirectRouteThree()
+    public function redirectRouteTwoWithSession()
     {
-        $this->redirectRoute('three');
+        session()->regenerate();
+
+        $this->redirectRoute('two');
     }
 
     public function render()
